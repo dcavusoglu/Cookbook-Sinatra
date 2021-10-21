@@ -1,0 +1,12 @@
+<h1>Welcome to your cookbook!</h1>
+
+<%= Time.now.strftime("%d/%m/%Y") %>
+
+
+<ul>
+	<% @recipes.each_with_index do |recipe, index| %>
+		<li><%= recipe.recipe_name.capitalize %>: <%= recipe.description %> - <a href="/recipes/<%= index %>">Delete</a></li>
+	<% end %>
+</ul>
+
+<a href="/new">Add a new recipe</a>
